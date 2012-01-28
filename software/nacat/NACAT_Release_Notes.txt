@@ -1,0 +1,43 @@
+
+NACAT Release Notes, Version 3.1
+================================
+
+Changes Since Previous Release
+------------------------------
+* NACAT now reports Nielsen Watermarks as well as NAES 2 codes.
+
+* By default, the application now generates decoder-output files in .csv format, in which each report row holds comma-delimited fields.  Files of this format may be easily imported into spreadsheet applications.
+
+* Separate files are created to report NAES 2 codes and Nielsen Watermarks.  The type of data reported in the file may be determined by the file extension, where files ending with .n2.csv report NAES 2 codes, while files ending with .nw.csv report Nielsen Watermarks.
+
+
+General Notes
+------------- 
+
+* NACAT functionality is dependent on the hardware used to deliver the audio. In order to guarantee optimal functionality, the user must set audio levels correctly, making certain that the audio is not clipping. Please refer to the user's manual for configuration details. 
+
+* When the user adjusts the Settings window to select an interval for the repeated display of the no-code warning line -- or an interval for the sounding of the no-FD-code warning alarm -- the application will correctly issue the required warning at the selected interval with these exceptions: 
+  - the first no-code warning line after the disappearance of watermarks may display up to 10 seconds late. 
+  - the first alarm after the start-up of the application may sound early (as early as 15 seconds after the start of the application). 
+
+* On the settings window, some combo boxes or list boxes include an additional blank line, an invalid selection. If the user selects the blank line, the application applies the smallest valid setting (when the choices are numeric), or it applies "No" if the valid choices are "Yes" or "No." In most cases it first issues a warning. 
+
+* If the folder that the user selected to hold the decoder-output files is removed, the decoder output files will not be generated -- and there will be no warning of the failure to generate the files.
+ 
+* The source audio for NACAT is provided by a sound card. In testing, it is important to understand that the watermark log will vary from run-to-run, even when the same audio file is used as the audio source. This variation is attributable to the fact that the sound card will deliver the audio slightly differently with each replay; in fact, it is unlikely that the NACAT software will start decoding at exactly the same point from run to run. Furthermore, the watermark for a specific timestamp may be labeled "stacked" on one run, but "unstacked" on another. This is normal. In order to test the application, one should import the log file into a spreadsheet, then filter out watermarks that have duplicate timestamps. When this procedure is followed, the difference in the number of reported codes should fall within 2-3%. 
+
+Installing NACAT
+----------------
+* If you haven't already done so, unzip NACAT_v3.1.4.zip into a new folder on your hard drive.
+
+* Double-click on the file NACATSetup_3-1-4.exe.
+
+* Follow the prompts (clicking Next at the bottom of each window).  On the License Agreement window, click "I accept" to accept the license agreement, then click "Next."  On the "Ready to Install" window, click "Install." On the final window, click "Finished."
+
+* If the NACAT application does not start when you double-click on the NACAT icon on your desktop, navigate to C:\Program Files\Nielsen\NACAT, and run vcredist_x86.exe.
+
+* Follow instructions in the user's manual to properly configure your system for optimal NACAT performance.
+
+
+
+
